@@ -9,6 +9,6 @@ public class Obstaculo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * velocidade);
+        transform.Translate(Time.deltaTime * velocidade * Vector3.left);
     }
 }
