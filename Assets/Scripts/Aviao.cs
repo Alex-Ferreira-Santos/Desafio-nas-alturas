@@ -8,10 +8,16 @@ public class Aviao : MonoBehaviour
     [SerializeField]
     private float forca;
     private Diretor diretor;
+    private Vector3 posicaoInicial;
 
     private void Awake()
     {
+        posicaoInicial = transform.position;
         fisica = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
         diretor = FindObjectOfType<Diretor>();
     }
 
@@ -34,5 +40,11 @@ public class Aviao : MonoBehaviour
     {
         fisica.simulated = false;
         diretor.FinalizarJogo();
+    }
+
+    public void Reiniciar()
+    {
+        transform.position = posicaoInicial;
+        fisica.simulated = true;
     }
 }
