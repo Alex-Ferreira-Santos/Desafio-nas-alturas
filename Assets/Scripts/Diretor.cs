@@ -18,6 +18,7 @@ public class Diretor : MonoBehaviour
     {
         Time.timeScale = 0;
         imagemGameOver.SetActive(true);
+        pontuacao.SalvarPontuacao();
     }
 
     public void ReiniciarJogo()
